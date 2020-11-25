@@ -7,7 +7,7 @@ It is a Proof of Stake Blockchain which uses the Grandpa Finality Gadget and Bab
 cargo run -p node-cli --release -- --dev --tmp
 ```
 
-##How to run Alice and Bob Local Testnet
+## How to run Alice and Bob Local Testnet
 To remove old Alice and Bob RocksDB:
 
 ```
