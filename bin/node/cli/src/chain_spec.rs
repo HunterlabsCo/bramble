@@ -65,7 +65,7 @@ pub type ChainSpec = sc_service::GenericChainSpec<
 >;
 /// Flaming Fir testnet generator
 pub fn flaming_fir_config() -> Result<ChainSpec, String> {
-	ChainSpec::from_json_bytes(&include_bytes!("../res/cartman.json")[..])
+	ChainSpec::from_json_bytes(&include_bytes!("../res/flaming-fir.json")[..])
 }
 
 fn session_keys(
@@ -165,6 +165,23 @@ pub fn staging_testnet_config() -> ChainSpec {
 		boot_nodes,
 		Some(TelemetryEndpoints::new(vec![(STAGING_TELEMETRY_URL.to_string(), 0)])
 			.expect("Staging telemetry url is valid; qed")),
+		None,
+		None,
+		Default::default(),
+	)
+}
+
+/// Cartman testnet config.
+pub fn cartman_testnet_config() -> ChainSpec {
+	let boot_nodes = vec![];
+	ChainSpec::from_genesis(
+		"cartman",
+		"cartman_testnet",
+		ChainType::Live,
+		staging_testnet_config_genesis,
+		boot_nodes,
+		Some(TelemetryEndpoints::new(vec![(STAGING_TELEMETRY_URL.to_string(), 0)])
+			.expect("Cartman telemetry url is valid; qed")),
 		None,
 		None,
 		Default::default(),
