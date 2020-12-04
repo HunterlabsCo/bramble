@@ -14,5 +14,5 @@ readme = "README.md"
 targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
-backtrace = "0.3.38"
+backtrace = "0.3.55"
 log = "0.4.8"
