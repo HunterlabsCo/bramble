@@ -4070,7 +4070,7 @@ dependencies = [
  "log",
  "node-primitives",
  "sc-rpc",
- "sp-tracing 2.0.0",
+ "sp-tracing 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -4370,28 +4370,6 @@ dependencies = [
  "sp-io 2.0.0",
  "sp-runtime 2.0.0",
  "sp-std 2.0.0",
-]
-
-[[package]]
-name = "pallet-aura"
-version = "2.0.0"
-dependencies = [
- "frame-support",
- "frame-system",
- "lazy_static",
- "pallet-session",
- "pallet-timestamp",
- "parity-scale-codec",
- "parking_lot 0.10.2",
- "serde",
- "sp-application-crypto 2.0.0",
- "sp-consensus-aura",
- "sp-core 2.0.0",
- "sp-inherents 2.0.0",
- "sp-io 2.0.0",
- "sp-runtime 2.0.0",
- "sp-std 2.0.0",
- "sp-timestamp 2.0.0",
 ]
 
 [[package]]
@@ -9299,7 +9277,7 @@ dependencies = [
  "sc-informant",
  "sc-network",
  "sc-service",
- "sp-database 2.0.0",
+ "sp-database 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasm-bindgen",
  "wasm-bindgen-futures",
 ]
