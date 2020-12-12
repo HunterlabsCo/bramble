@@ -5,13 +5,18 @@ It uses the Grandpa Finality Gadget and Babe Block Production Mechanism together
 ## Prerequisites
 1) Rust (https://www.rust-lang.org/tools/install)
 ### Install
+```
 curl https://sh.rustup.rs -sSf | sh
-
+```
 ### Configure
+```
 source ~/.cargo/env
+```
 
 ```
 rustup default stable
+rustup install nightly-2020-10-06
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
 ```
 
 ### Ubuntu users
