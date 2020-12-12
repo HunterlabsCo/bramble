@@ -4,6 +4,15 @@ It uses the Grandpa Finality Gadget and Babe Block Production Mechanism together
 
 ## Prerequisites
 1) Rust (https://www.rust-lang.org/tools/install)
+### Install
+curl https://sh.rustup.rs -sSf | sh
+
+### Configure
+source ~/.cargo/env
+
+```
+rustup default stable
+```
 
 ## How to run a local development chain
 ```

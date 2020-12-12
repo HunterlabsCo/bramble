@@ -118,7 +118,6 @@ members = [
 	"primitives/authorship",
 	"primitives/block-builder",
 	"primitives/blockchain",
-	"primitives/consensus/aura",
 	"primitives/consensus/babe",
 	"primitives/consensus/common",
 	"primitives/consensus/pow",
