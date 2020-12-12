@@ -14,6 +14,15 @@ source ~/.cargo/env
 rustup default stable
 ```
 
+### Ubuntu users
+sudo apt update
+
+#### May prompt for location information
+sudo apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl
+
+### Windows Users
+Follow these documentation https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users
+
 ## How to run a local development chain
 ```
 cargo run -p node-cli --release -- --dev --tmp
