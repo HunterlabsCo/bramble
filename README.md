@@ -59,4 +59,4 @@ It is a work-in-progress. If you want to contribute read more about https://subs
 ## Contact and Discord Channel
 
 Email: hunterlabsc@gmail.com<br/>
-Discord: https://discord.gg/jeqAnF4Tuy
+Discord: https://discord.gg/rJM5vNxF8P
