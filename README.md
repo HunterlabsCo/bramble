@@ -20,10 +20,10 @@ rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
 ```
 
 ### Ubuntu users
+```
 sudo apt update
-
-#### May prompt for location information
 sudo apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl
+```
 
 ### Windows Users
 Follow these documentation https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users
@@ -54,7 +54,13 @@ cargo run -p node-cli --release -- --base-path /tmp/bob --chain local --bob --po
 ```
 
 ## Cartman Testnet
-It is a work-in-progress. If you want to contribute read more about https://substrate.dev/
+
+To sync to the latest block:
+
+```
+cargo run -p node-cli --release -- --base-path /tmp/node --chain ./cartman.json --port 30335 --ws-port 9946 --rpc-port 9935 --rpc-methods=Unsafe --name MyNode --bootnodes /ip4/3.134.85.193/tcp/30333/p2p/12D3KooWN5jVvXUTo23cVS11bF39Rn5QEqH2fwxYvAv2wrZrZnpi
+```
+To become a validator node please let us know on the following contact points
 
 ## Contact and Discord Channel
 
