@@ -465,6 +465,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
 
 [[package]]
+name = "bitmask"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5da9b3d9f6f585199287a473f4f8dfab6566cf827d15c00c219f53c645687ead"
+
+[[package]]
 name = "bitvec"
 version = "0.17.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1610,8 +1616,8 @@ dependencies = [
 name = "frame-benchmarking"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
  "linregress",
  "parity-scale-codec",
@@ -1625,11 +1631,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "frame-benchmarking"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "66a5e3fe43568300fdca1c1bfd45ea463a12cca8fbe6172a4f6d58cd54e3fbcc"
+dependencies = [
+ "frame-support 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-system 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "linregress",
+ "parity-scale-codec",
+ "paste 0.1.18",
+ "sp-api 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-io 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-runtime-interface 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-storage 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "frame-benchmarking-cli"
 version = "2.0.0"
 dependencies = [
  "chrono",
- "frame-benchmarking",
+ "frame-benchmarking 2.0.0",
  "handlebars",
  "parity-scale-codec",
  "sc-cli",
@@ -1649,10 +1674,10 @@ dependencies = [
 name = "frame-executive"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-indices",
  "pallet-transaction-payment",
  "parity-scale-codec",
@@ -1676,13 +1701,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "frame-metadata"
+version = "12.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6b5640bfcb7111643807c63cd38ecdcc923d3253e525f23ab6b366002bf8ecd5"
+dependencies = [
+ "parity-scale-codec",
+ "serde",
+ "sp-core 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "frame-support"
 version = "2.0.0"
 dependencies = [
  "bitflags",
- "frame-metadata",
- "frame-support-procedural",
- "frame-system",
+ "frame-metadata 12.0.0",
+ "frame-support-procedural 2.0.0",
+ "frame-system 2.0.0",
  "impl-trait-for-tuples",
  "log",
  "once_cell",
@@ -1705,10 +1742,48 @@ dependencies = [
 ]
 
 [[package]]
+name = "frame-support"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "807c32da14bd0e5fb751095335a07938cda6f1488f57d7b0539118e3434980a8"
+dependencies = [
+ "bitmask",
+ "frame-metadata 12.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-support-procedural 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "impl-trait-for-tuples",
+ "log",
+ "once_cell",
+ "parity-scale-codec",
+ "paste 0.1.18",
+ "serde",
+ "smallvec 1.5.0",
+ "sp-arithmetic 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-core 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-inherents 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-io 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-state-machine 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-tracing 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "frame-support-procedural"
 version = "2.0.0"
 dependencies = [
- "frame-support-procedural-tools",
+ "frame-support-procedural-tools 2.0.0",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "frame-support-procedural"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "508dc2eb44a802f1876e3dc97a76aed8f18b993f75f6cb1975cb83cf45a5d981"
+dependencies = [
+ "frame-support-procedural-tools 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro2",
  "quote",
  "syn",
@@ -1718,7 +1793,20 @@ dependencies = [
 name = "frame-support-procedural-tools"
 version = "2.0.0"
 dependencies = [
- "frame-support-procedural-tools-derive",
+ "frame-support-procedural-tools-derive 2.0.0",
+ "proc-macro-crate",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "frame-support-procedural-tools"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "04f6d1dd14477123180c47024bcc24c1a624ea8631b4f00080d14089907397f4"
+dependencies = [
+ "frame-support-procedural-tools-derive 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro-crate",
  "proc-macro2",
  "quote",
@@ -1735,11 +1823,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "frame-support-procedural-tools-derive"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ad38379ecedd632f286c7b94a4b9a15bffb635194de4dbf2b4458bc46cee28f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "frame-support-test"
 version = "2.0.0"
 dependencies = [
- "frame-metadata",
- "frame-support",
+ "frame-metadata 12.0.0",
+ "frame-support 2.0.0",
  "parity-scale-codec",
  "pretty_assertions",
  "rustversion",
@@ -1758,7 +1857,7 @@ name = "frame-system"
 version = "2.0.0"
 dependencies = [
  "criterion",
- "frame-support",
+ "frame-support 2.0.0",
  "impl-trait-for-tuples",
  "parity-scale-codec",
  "serde",
@@ -1772,12 +1871,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "frame-system"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d172404f0e44b867f5fd14465a27f298b8828b53d7a7a555d3759e1dec3c8f0d"
+dependencies = [
+ "frame-support 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "impl-trait-for-tuples",
+ "parity-scale-codec",
+ "serde",
+ "sp-core 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-io 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-version 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "frame-system-benchmarking"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -3895,8 +4011,8 @@ version = "2.0.0"
 dependencies = [
  "assert_cmd",
  "frame-benchmarking-cli",
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "futures 0.3.8",
  "hex-literal",
  "log",
@@ -3907,13 +4023,13 @@ dependencies = [
  "node-rpc",
  "node-runtime",
  "pallet-authority-discovery",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-contracts",
  "pallet-grandpa",
  "pallet-im-online",
  "pallet-indices",
  "pallet-staking",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "parking_lot 0.10.2",
@@ -3970,19 +4086,19 @@ name = "node-executor"
 version = "2.0.0"
 dependencies = [
  "criterion",
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "node-primitives",
  "node-runtime",
  "node-testing",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-contracts",
  "pallet-grandpa",
  "pallet-im-online",
  "pallet-indices",
  "pallet-session",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "pallet-transaction-payment",
  "pallet-treasury",
  "parity-scale-codec",
@@ -4020,7 +4136,7 @@ dependencies = [
 name = "node-primitives"
 version = "2.0.0"
 dependencies = [
- "frame-system",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "pretty_assertions",
  "sp-application-crypto 2.0.0",
@@ -4077,10 +4193,10 @@ dependencies = [
 name = "node-runtime"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
+ "frame-benchmarking 2.0.0",
  "frame-executive",
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "frame-system-benchmarking",
  "frame-system-rpc-runtime-api",
  "hex-literal",
@@ -4088,7 +4204,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-collective",
  "pallet-contracts",
  "pallet-contracts-primitives",
@@ -4111,9 +4227,9 @@ dependencies = [
  "pallet-session-benchmarking",
  "pallet-society",
  "pallet-staking",
- "pallet-staking-reward-curve",
+ "pallet-staking-reward-curve 2.0.0",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "pallet-treasury",
@@ -4145,22 +4261,22 @@ name = "node-testing"
 version = "2.0.0"
 dependencies = [
  "criterion",
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "fs_extra",
  "futures 0.3.8",
  "log",
  "node-executor",
  "node-primitives",
  "node-runtime",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-contracts",
  "pallet-grandpa",
  "pallet-indices",
  "pallet-session",
  "pallet-society",
  "pallet-staking",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "pallet-transaction-payment",
  "pallet-treasury",
  "parity-scale-codec",
@@ -4347,8 +4463,8 @@ dependencies = [
 name = "pallet-assets"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4361,9 +4477,9 @@ dependencies = [
 name = "pallet-atomic-swap"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4376,8 +4492,8 @@ dependencies = [
 name = "pallet-authority-discovery"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-session",
  "parity-scale-codec",
  "serde",
@@ -4394,8 +4510,8 @@ dependencies = [
 name = "pallet-authorship"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "impl-trait-for-tuples",
  "parity-scale-codec",
  "sp-authorship",
@@ -4410,16 +4526,16 @@ dependencies = [
 name = "pallet-babe"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-application-crypto 2.0.0",
@@ -4439,9 +4555,9 @@ dependencies = [
 name = "pallet-balances"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "serde",
@@ -4452,14 +4568,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-balances"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56bf116724c3adb7eee6ae49adfc28d3d38d9d34bbfdcc009497120256309a37"
+dependencies = [
+ "frame-benchmarking 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-support 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-system 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-scale-codec",
+ "serde",
+ "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "pallet-collective"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4473,15 +4604,15 @@ name = "pallet-contracts"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-contracts-primitives",
  "pallet-contracts-proc-macro",
  "pallet-randomness-collective-flip",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "parity-wasm 0.41.0",
  "paste 1.0.3",
@@ -4552,11 +4683,11 @@ dependencies = [
 name = "pallet-democracy"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-scheduler",
  "parity-scale-codec",
  "serde",
@@ -4572,10 +4703,10 @@ dependencies = [
 name = "pallet-elections"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4588,11 +4719,11 @@ dependencies = [
 name = "pallet-elections-phragmen"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4607,10 +4738,10 @@ dependencies = [
 name = "pallet-example"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4623,8 +4754,8 @@ dependencies = [
 name = "pallet-example-offchain-worker"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "lite-json",
  "parity-scale-codec",
  "serde",
@@ -4639,8 +4770,8 @@ dependencies = [
 name = "pallet-example-parallel"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "sp-core 2.0.0",
  "sp-io 2.0.0",
@@ -4654,16 +4785,16 @@ name = "pallet-grandpa"
 version = "2.0.0"
 dependencies = [
  "finality-grandpa",
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-application-crypto 2.0.0",
@@ -4682,10 +4813,10 @@ name = "pallet-identity"
 version = "2.0.0"
 dependencies = [
  "enumflags2",
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4698,9 +4829,9 @@ dependencies = [
 name = "pallet-im-online"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-authorship",
  "pallet-session",
  "parity-scale-codec",
@@ -4717,10 +4848,10 @@ dependencies = [
 name = "pallet-indices"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4734,8 +4865,8 @@ dependencies = [
 name = "pallet-membership"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4748,10 +4879,10 @@ dependencies = [
 name = "pallet-multisig"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4764,9 +4895,9 @@ dependencies = [
 name = "pallet-nicks"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4779,8 +4910,8 @@ dependencies = [
 name = "pallet-node-authorization"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4793,9 +4924,9 @@ dependencies = [
 name = "pallet-offences"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4809,18 +4940,18 @@ dependencies = [
 name = "pallet-offences-benchmarking"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-grandpa",
  "pallet-im-online",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4834,10 +4965,10 @@ dependencies = [
 name = "pallet-proxy"
 version = "2.0.1"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "pallet-utility",
  "parity-scale-codec",
  "serde",
@@ -4851,8 +4982,8 @@ dependencies = [
 name = "pallet-randomness-collective-flip"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "safe-mix",
  "sp-core 2.0.0",
@@ -4866,9 +4997,9 @@ name = "pallet-recovery"
 version = "2.0.0"
 dependencies = [
  "enumflags2",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4881,9 +5012,9 @@ dependencies = [
 name = "pallet-scheduler"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4897,9 +5028,9 @@ dependencies = [
 name = "pallet-scored-pool"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -4912,11 +5043,11 @@ dependencies = [
 name = "pallet-session"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "impl-trait-for-tuples",
  "lazy_static",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-application-crypto 2.0.0",
@@ -4933,14 +5064,14 @@ dependencies = [
 name = "pallet-session-benchmarking"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "pallet-session",
  "pallet-staking",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "rand 0.7.3",
  "serde",
@@ -4955,9 +5086,9 @@ dependencies = [
 name = "pallet-society"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "rand_chacha 0.2.2",
  "serde",
@@ -4971,15 +5102,15 @@ dependencies = [
 name = "pallet-staking"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pallet-session",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "pallet-timestamp 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-scale-codec",
  "parking_lot 0.10.2",
  "rand_chacha 0.2.2",
@@ -4990,7 +5121,7 @@ dependencies = [
  "sp-npos-elections",
  "sp-runtime 2.0.0",
  "sp-staking",
- "sp-std 2.0.0",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sp-storage 2.0.0",
  "sp-tracing 2.0.0",
  "static_assertions",
@@ -5001,15 +5132,15 @@ dependencies = [
 name = "pallet-staking-fuzz"
 version = "0.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "honggfuzz",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "pallet-indices",
  "pallet-session",
  "pallet-staking",
- "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-staking-reward-curve 2.0.0",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "sp-core 2.0.0",
  "sp-io 2.0.0",
@@ -5030,11 +5161,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-staking-reward-curve"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1eae721ac36af88b42806d3d7eb32cd6fe8b0a5a6ba590ae397ede5af3dc53fc"
+dependencies = [
+ "proc-macro-crate",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "pallet-sudo"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -5047,9 +5190,9 @@ dependencies = [
 name = "pallet-timestamp"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "impl-trait-for-tuples",
  "parity-scale-codec",
  "serde",
@@ -5062,12 +5205,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-timestamp"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ccddd55b713f541dff6ccf063cc7ddbc4fc41e92a9fdad8ec9562a0e3b465016"
+dependencies = [
+ "frame-benchmarking 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-support 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-system 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "impl-trait-for-tuples",
+ "parity-scale-codec",
+ "serde",
+ "sp-inherents 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sp-timestamp 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "pallet-transaction-payment"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "pallet-transaction-payment-rpc-runtime-api",
  "parity-scale-codec",
  "serde",
@@ -5100,7 +5261,7 @@ dependencies = [
 name = "pallet-transaction-payment-rpc-runtime-api"
 version = "2.0.0"
 dependencies = [
- "frame-support",
+ "frame-support 2.0.0",
  "parity-scale-codec",
  "serde",
  "serde_json",
@@ -5113,10 +5274,10 @@ dependencies = [
 name = "pallet-treasury"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -5130,10 +5291,10 @@ dependencies = [
 name = "pallet-utility"
 version = "2.0.0"
 dependencies = [
- "frame-benchmarking",
- "frame-support",
- "frame-system",
- "pallet-balances",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -5147,11 +5308,11 @@ name = "pallet-vesting"
 version = "2.0.0"
 dependencies = [
  "enumflags2",
- "frame-benchmarking",
- "frame-support",
- "frame-system",
+ "frame-benchmarking 2.0.0",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "hex-literal",
- "pallet-balances",
+ "pallet-balances 2.0.0",
  "parity-scale-codec",
  "serde",
  "sp-core 2.0.0",
@@ -8934,6 +9095,7 @@ dependencies = [
  "sp-inherents 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sp-runtime 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sp-std 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasm-timer",
 ]
 
 [[package]]
@@ -9196,7 +9358,7 @@ dependencies = [
 name = "subkey"
 version = "2.0.0"
 dependencies = [
- "frame-system",
+ "frame-system 2.0.0",
  "node-primitives",
  "node-runtime",
  "sc-cli",
@@ -9254,7 +9416,7 @@ dependencies = [
 name = "substrate-frame-cli"
 version = "2.0.0"
 dependencies = [
- "frame-system",
+ "frame-system 2.0.0",
  "sc-cli",
  "sp-core 2.0.0",
  "sp-runtime 2.0.0",
@@ -9265,8 +9427,8 @@ dependencies = [
 name = "substrate-frame-rpc-support"
 version = "2.0.0"
 dependencies = [
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "futures 0.3.8",
  "jsonrpc-client-transports",
  "jsonrpc-core",
@@ -9362,13 +9524,13 @@ version = "2.0.0"
 dependencies = [
  "cfg-if 0.1.10",
  "frame-executive",
- "frame-support",
- "frame-system",
+ "frame-support 2.0.0",
+ "frame-system 2.0.0",
  "frame-system-rpc-runtime-api",
  "log",
  "memory-db",
  "pallet-babe",
- "pallet-timestamp",
+ "pallet-timestamp 2.0.0",
  "parity-scale-codec",
  "parity-util-mem",
  "sc-block-builder",
