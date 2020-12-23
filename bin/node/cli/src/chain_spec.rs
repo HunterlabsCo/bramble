@@ -112,10 +112,10 @@ fn staging_testnet_config_genesis() -> GenesisConfig {
 		hex!["f05f0d4b9cf802d9459bf31eafbab80782960eb6136aa3c48d082b0966e4a84d"].unchecked_into(),
 	)];
 
-	// generated with secret: subkey inspect "$secret"/fir
+	// generated with secret: subkey inspect "$secret"//crt
 	let root_key: AccountId = hex![
-		// 5Ff3iXP75ruzroPWRP2FYBHWnmGGBSb63857BgnzCoXNxfPo
-		"9ee5e5bdc0ec239eb164f865ecc345ce4c88e76ee002e0f7e318097347471809"
+		// 5HHTzgDZNLc6zuuygjP6JSkj3i5y8jbzFAnnqmyn1Wv7pTTi
+		"e6e8b1b17b64716db5f77ad236f2110b6d5622dae93a28be524da3a63a0e0801"
 	].into();
 
 	let endowed_accounts: Vec<AccountId> = vec![root_key.clone()];
