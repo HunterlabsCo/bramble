@@ -5090,7 +5090,7 @@ dependencies = [
  "frame-system 2.0.0",
  "pallet-balances 2.0.0",
  "parity-scale-codec",
- "rand_chacha 0.2.2",
+ "rand_chacha 0.3.1",
  "serde",
  "sp-core 2.0.0",
  "sp-io 2.0.0",
@@ -5113,7 +5113,7 @@ dependencies = [
  "pallet-timestamp 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-scale-codec",
  "parking_lot 0.10.2",
- "rand_chacha 0.2.2",
+ "rand_chacha 0.3.1",
  "serde",
  "sp-application-crypto 2.0.0",
  "sp-core 2.0.0",
@@ -6115,6 +6115,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rand_chacha"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
+dependencies = [
+ "ppv-lite86",
+ "rand_core 0.6.2",
+]
+
+[[package]]
 name = "rand_core"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6137,6 +6147,12 @@ checksum = "90bde5296fc891b0cef12a6d03ddccc162ce7b2aff54160af9338f8d40df6d19"
 dependencies = [
  "getrandom 0.1.15",
 ]
+
+[[package]]
+name = "rand_core"
+version = "0.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34cf66eb183df1c5876e2dcf6b13d57340741e8dc255b48e40a26de954d06ae7"
 
 [[package]]
 name = "rand_hc"
@@ -6792,7 +6808,7 @@ dependencies = [
  "parking_lot 0.10.2",
  "pdqselect",
  "rand 0.7.3",
- "rand_chacha 0.2.2",
+ "rand_chacha 0.3.1",
  "retain_mut",
  "sc-block-builder",
  "sc-client-api",
@@ -8460,7 +8476,7 @@ dependencies = [
  "pretty_assertions",
  "primitive-types",
  "rand 0.7.3",
- "rand_chacha 0.2.2",
+ "rand_chacha 0.3.1",
  "regex",
  "schnorrkel",
  "secrecy 0.7.0",
@@ -8695,7 +8711,7 @@ dependencies = [
  "parity-scale-codec",
  "parking_lot 0.10.2",
  "rand 0.7.3",
- "rand_chacha 0.2.2",
+ "rand_chacha 0.3.1",
  "schnorrkel",
  "sp-core 2.0.0",
  "sp-externalities 0.8.0",
